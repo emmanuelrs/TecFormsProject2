@@ -1,23 +1,23 @@
 Rails.application.routes.draw do
-  resources :responses
-  resources :answers
-  resources :questions
-  resources :surveys
-  devise_for :users
-  get 'pages/home'
+  get 'surveys/index'
 
-  get 'pages/about'
+  get 'surveys/index'
+
+  get 'surveys/show'
+
+  get 'surveys/new'
+
+  get 'pages/home'
 
   get 'pages/contact'
 
-
-  root 'pages#home'
+  get 'pages/about'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'pages#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
