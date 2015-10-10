@@ -24,7 +24,7 @@ RSpec.describe SurveysController, type: :controller do
   # Survey. As you add validations to Survey, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {name: 'food', user: 1, time: '2015-10-10 16:00:00'} 
   }
 
   let(:invalid_attributes) {
