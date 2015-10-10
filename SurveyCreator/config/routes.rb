@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'survey/index'
 
-  get 'survey/show'
+  get 'surveys/index'
 
-  get 'survey/new'
+  get 'surveys/show'
 
-  resources :questions
+  get 'surveys/new'
+
   get 'surveys/index'
 
   get 'surveys/index'
@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get 'pages/contact'
 
   get 'pages/about'
+
+  resources :questions
+  resources :surveys
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

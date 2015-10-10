@@ -8,18 +8,19 @@ RSpec.describe SurveysController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
-#  describe "GET #show" do
-#    it "assigns the requested survey as @survey" do
-#      survey = Survey.create! valid_attributes
-#      get :show, {:id => survey.to_param}, valid_session
-#      expect(assigns(:survey)).to eq(survey)
-#    end
-#  end
 
-describe "GET #new" do
-    it "assigns a new survey as @survey" do
-      get :new, {}, valid_session
-      expect(assigns(:survey)).to be_a_new(Survey)
+  describe "GET #show" do
+    it "returns http success" do
+      get :show
+      expect(response).to have_http_status(:success)
     end
   end
+
+  describe "GET #new" do
+    it "returns http success" do
+      get :new
+      expect(response).to have_http_status(:success)
+    end
+  end
+
 end
