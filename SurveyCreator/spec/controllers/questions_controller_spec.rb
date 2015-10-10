@@ -52,12 +52,12 @@ RSpec.describe QuestionsController, type: :controller do
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new question as @question" do
-      get :new, {}, valid_session
-      expect(assigns(:question)).to be_a_new(Question)
-    end
-  end
+#  describe "GET #new" do
+#    it "assigns a new question as @question" do
+#      get :new, {}, valid_session
+#      expect(assigns(:question)).to be_a_new(Question)
+#    end
+#  end
 
   describe "GET #edit" do
     it "assigns the requested question as @question" do
