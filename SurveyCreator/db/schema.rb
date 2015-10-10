@@ -11,22 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151010132940) do
+ActiveRecord::Schema.define(version: 20151010161027) do
+
+  create_table "answers", force: :cascade do |t|
+    t.string   "name_option", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "questions", force: :cascade do |t|
-    t.text     "question",    limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "question_id", limit: 4
-  end
-
-  add_index "questions", ["question_id"], name: "index_questions_on_question_id", using: :btree
-
-  create_table "surveys", force: :cascade do |t|
-    t.text     "questionN",  limit: 65535
+    t.text     "question",   limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "survey_id",  limit: 4
   end
 
-  add_foreign_key "questions", "questions"
+  add_index "questions", ["survey_id"], name: "index_questions_on_survey_id", using: :btree
+
+  create_table "results", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.integer  "user",       limit: 4
+    t.datetime "time"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_foreign_key "questions", "surveys"
 end

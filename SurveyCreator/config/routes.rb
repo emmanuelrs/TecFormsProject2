@@ -1,23 +1,18 @@
 Rails.application.routes.draw do
-
-  resources :surveys
-  get 'surveys/index'
-
-  get 'surveys/show'
-
-  get 'surveys/new'
-
   get 'pages/home'
 
-  get 'pages/contact'
+  get 'pages/contact_us'
 
-  get 'pages/about'
+  get 'home/contact'
 
+  get 'home/us'
+
+  resources :results
+  resources :answers
   
   resources :surveys do
     resources :questions
   end
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

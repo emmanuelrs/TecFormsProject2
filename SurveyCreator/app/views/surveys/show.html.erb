@@ -1,8 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Questionn:</strong>
-  <%= @survey.questionN %>
+  <strong>Name:</strong>
+  <%= @survey.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @survey.user %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @survey.time %>
+</p>
+
+<p>
+	<strong>Questions</strong>
+	<%= link_to 'New Question', new_survey_question_path(@survey) %>
+	<%= link_to 'Show Questions', survey_questions_path(@survey) %>
 </p>
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
