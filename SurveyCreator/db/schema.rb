@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151010050236) do
+ActiveRecord::Schema.define(version: 20151010132940) do
 
   create_table "questions", force: :cascade do |t|
     t.text     "question",    limit: 65535
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20151010050236) do
   add_index "questions", ["question_id"], name: "index_questions_on_question_id", using: :btree
 
   create_table "surveys", force: :cascade do |t|
-    t.string   "questions",  limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.text     "questionN",  limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_foreign_key "questions", "questions"

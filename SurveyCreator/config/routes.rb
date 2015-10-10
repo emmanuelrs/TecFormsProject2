@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :surveys
   get 'surveys/index'
 
   get 'surveys/show'
