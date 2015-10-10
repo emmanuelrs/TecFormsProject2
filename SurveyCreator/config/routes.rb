@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'survey/index'
+
+  get 'survey/show'
+
+  get 'survey/new'
+
+  resources :questions
   get 'surveys/index'
 
   get 'surveys/index'
